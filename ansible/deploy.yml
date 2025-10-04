@@ -1,5 +1,4 @@
 - hosts: local
-  become: yes
   vars:
     docker_image: "{{ docker_image | default('raginimetlapalli/calculator') }}"
     docker_tag:   "{{ docker_tag | default('latest') }}"
