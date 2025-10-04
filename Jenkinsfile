@@ -50,10 +50,8 @@ pipeline {
 
     stage('Deploy (Ansible)') {
       steps {
-
             echo 'Running Ansible Playbook...'
-            sh 'ansible-playbook -i ansible/inventory ansible/deploy.yml --extra-vars "docker_image=${DOCKER_IMAGE} docker_tag=${IMAGE_TAG}'
-
+            sh "ansible-playbook -i ansible/inventory ansible/deploy.yml --extra-vars \"docker_image=${DOCKER_IMAGE} docker_tag=${IMAGE_TAG}\""
         }
       }
     }
