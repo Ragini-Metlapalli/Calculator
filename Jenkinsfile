@@ -1,6 +1,9 @@
 pipeline {
   agent any
-
+    tools {
+        maven 'maven'
+        jdk 'jdk21'
+    }
   environment {
     DOCKER_IMAGE = "raginimetlapalli/calculator"
   }
