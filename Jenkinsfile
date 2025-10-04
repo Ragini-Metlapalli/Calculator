@@ -34,7 +34,7 @@ pipeline {
             steps {
                 script {
                     env.IMAGE_TAG = "${env.BUILD_NUMBER}"
-                    sh "docker build -t ${DOCKER_IMAGE}:${IMAGE_TAG} ."
+                    sh "sudo docker build -t ${DOCKER_IMAGE}:${IMAGE_TAG} ."
                 }
             }
         }
