@@ -18,6 +18,7 @@
         fi
       args:
         warn: false
+        become: yes
 
     - name: Add current user to docker group (so non-root can run docker)
       user:
