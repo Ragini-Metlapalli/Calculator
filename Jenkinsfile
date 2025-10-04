@@ -20,13 +20,13 @@ pipeline {
 
         stage('Build (Maven)') {
             steps {
-                sh 'mvn -B -DskipTests=false clean package'
+                sh 'mvn clean package'
             }
         }
 
         stage('Unit Tests') {
             steps {
-                sh 'mvn test -B'
+                sh 'mvn test'
             }
         }
 
