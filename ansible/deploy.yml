@@ -13,5 +13,5 @@
     - name: Stop and remove old container (if any)
       shell: docker rm -f {{ container_name }} || true
 
-    - name: Run new container (detached, persistent)
-      shell: docker run -d --name {{ container_name }} -it --restart unless-stopped {{ docker_image }}:{{ docker_tag }}
+    - name: Run container (interactive)
+      shell: docker run -it --name {{ container_name }} --rm {{ docker_image }}:{{ docker_tag }}
