@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Calculator {
 
+
     // Square root
     public double sqrt(double x) {
         if (x < 0) throw new IllegalArgumentException("Cannot take sqrt of negative number");
@@ -42,29 +43,43 @@ public class Calculator {
             System.out.println("4. Power ");
             System.out.println("5. Exit");
             System.out.print("Choose an option: ");
+            System.out.flush();  // Flush here to show menu immediately
 
-            int choice = sc.nextInt();
+            int choice;
+            try {
+                choice = sc.nextInt();
+            } catch (Exception e) {
+                System.out.println("Invalid input. Please enter a number 1-5.");
+                sc.nextLine(); // clear invalid input
+                continue;
+            }
+
             try {
                 switch (choice) {
                     case 1:
                         System.out.print("Enter number: ");
+                        System.out.flush();
                         double num = sc.nextDouble();
                         System.out.println("sqrt(" + num + ") = " + sqrt(num));
                         break;
                     case 2:
                         System.out.print("Enter integer: ");
+                        System.out.flush();
                         int n = sc.nextInt();
                         System.out.println(n + "! = " + factorial(n));
                         break;
                     case 3:
                         System.out.print("Enter number: ");
+                        System.out.flush();
                         double x = sc.nextDouble();
                         System.out.println("ln(" + x + ") = " + ln(x));
                         break;
                     case 4:
                         System.out.print("Enter base: ");
+                        System.out.flush();
                         double base = sc.nextDouble();
                         System.out.print("Enter exponent: ");
+                        System.out.flush();
                         double exp = sc.nextDouble();
                         System.out.println(base + "^" + exp + " = " + power(base, exp));
                         break;
@@ -80,6 +95,7 @@ public class Calculator {
             }
         }
     }
+
 
     // Main
     public static void main(String[] args) {
