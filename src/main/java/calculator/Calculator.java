@@ -36,14 +36,15 @@ public class Calculator {
     public void run() {
         Scanner sc = new Scanner(System.in);
         while (true) {
-            System.out.println("\n--- Scientific Calculator ---");
+            System.out.println("\n--- Calculator ---");
+            System.out.flush();
             System.out.println("1. Square Root ");
             System.out.println("2. Factorial ");
             System.out.println("3. Natural Log ");
             System.out.println("4. Power ");
             System.out.println("5. Exit");
             System.out.print("Choose an option: ");
-            System.out.flush();  // Flush here to show menu immediately
+            System.out.flush();
 
             int choice;
             try {
