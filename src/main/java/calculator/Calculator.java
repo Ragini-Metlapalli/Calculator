@@ -35,6 +35,9 @@ public class Calculator {
     // CLI Menu
     public void run() {
         Scanner sc = new Scanner(System.in);
+        if (System.console() == null && sc.hasNextLine()) {
+            sc.nextLine();
+        }
         while (true) {
             System.out.println("\n--- Calculator ---");
             System.out.println("1. Square Root ");
