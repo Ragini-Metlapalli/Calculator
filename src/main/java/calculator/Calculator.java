@@ -34,8 +34,9 @@ public class Calculator {
 
     // CLI Menu
     public void run() {
+        System.out.println("check if printing 1");
         Scanner sc = new Scanner(System.in);
-        System.out.println("check if printing");
+        System.out.println("check if printing 2");
         while (true) {
             System.out.println("\n--- Calculator ---");
             System.out.println("1. Square Root ");
