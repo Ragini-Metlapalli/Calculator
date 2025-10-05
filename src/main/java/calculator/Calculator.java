@@ -36,8 +36,8 @@ public class Calculator {
     public void run() {
         Scanner sc = new Scanner(System.in);
         while (true) {
-            System.out.println("\n--- Calculator ---");
             System.out.flush();
+            System.out.println("\n--- Calculator ---");
             System.out.println("1. Square Root ");
             System.out.println("2. Factorial ");
             System.out.println("3. Natural Log ");
