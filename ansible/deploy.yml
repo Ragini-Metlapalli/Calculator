@@ -7,30 +7,11 @@
     container_name: Calculator
 
   tasks:
-    - name: Ensure curl present (for get.docker.com)
-      apt:
-        name: curl
-        state: present
-      when: ansible_os_family == "Debian"
-
-    - name: Ensure Docker installed (quick install via convenience script)
-      shell: |
-        if ! command -v docker >/dev/null 2>&1; then
-          curl -fsSL https://get.docker.com | sh
-        fi
-
-    - name: Add current user to docker group (so non-root can run docker)
-      user:
-        name: "{{ ansible_user | default(lookup('env','USER')) }}"
-        groups: docker
-        append: yes
-      ignore_errors: yes
-
-    - name: Pull docker image
+    - name: Pull latest docker image
       command: docker pull {{ docker_image }}:{{ docker_tag }}
 
     - name: Stop and remove old container (if any)
       shell: docker rm -f {{ container_name }} || true
 
-    - name: Run container (detached, keep tty and stdin open)
+    - name: Run new container (detached, persistent)
       shell: docker run -d --name {{ container_name }} -it --restart unless-stopped {{ docker_image }}:{{ docker_tag }}
