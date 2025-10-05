@@ -95,7 +95,6 @@ public class Calculator {
         }
     }
 
-
     // Main
     public static void main(String[] args) {
         Calculator calc = new Calculator();
