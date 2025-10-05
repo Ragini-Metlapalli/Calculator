@@ -60,10 +60,10 @@ pipeline {
 
     post {
         success {
-            echo "Pipeline succeeded - you can attach to the container on the target host."
+            echo "Pipeline succeeded"
         }
         failure {
-            echo "Pipeline failed - check console output."
+            echo "Pipeline failed"
         }
     }
 }
