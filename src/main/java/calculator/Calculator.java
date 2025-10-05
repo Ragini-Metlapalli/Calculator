@@ -35,8 +35,8 @@ public class Calculator {
     // CLI Menu
     public void run() {
         Scanner sc = new Scanner(System.in);
+        System.out.println("check if printing");
         while (true) {
-            System.out.flush();
             System.out.println("\n--- Calculator ---");
             System.out.println("1. Square Root ");
             System.out.println("2. Factorial ");
@@ -44,7 +44,6 @@ public class Calculator {
             System.out.println("4. Power ");
             System.out.println("5. Exit");
             System.out.print("Choose an option: ");
-            System.out.flush();
 
             int choice;
             try {
