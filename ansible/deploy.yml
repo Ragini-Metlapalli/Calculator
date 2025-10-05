@@ -1,4 +1,6 @@
 - hosts: local
+  become: false
+
   vars:
     docker_image: "{{ docker_image | default('raginimetlapalli/calculator') }}"
     docker_tag:   "{{ docker_tag | default('latest') }}"
@@ -10,7 +12,6 @@
         name: curl
         state: present
       when: ansible_os_family == "Debian"
-      become: yes
 
     - name: Ensure Docker installed (quick install via convenience script)
       shell: |
@@ -19,14 +20,12 @@
         fi
       args:
         warn: false
-      become: yes
 
     - name: Add current user to docker group (so non-root can run docker)
       user:
         name: "{{ ansible_user | default(lookup('env','USER')) }}"
         groups: docker
         append: yes
-      become: yes
       ignore_errors: yes
 
     - name: Pull docker image
