@@ -14,4 +14,4 @@
       shell: docker rm -f {{ container_name }} || true
 
     - name: Run new container
-      shell: docker run -d --name {{ container_name }} -it --restart unless-stopped {{ docker_image }}:{{ docker_tag }}
+      shell: docker run -d --name {{ container_name }} -it {{ docker_image }}:{{ docker_tag }}

@@ -34,9 +34,8 @@ public class Calculator {
 
     // CLI Menu
     public void run() {
-        System.out.print("---------------------Calculator-------------------- ");
+        System.out.print("########################## Calculator ################################ ");
         Scanner sc = new Scanner(System.in);
-        try { Thread.sleep(500); } catch (InterruptedException ignored) {}
         while (true) {
             System.out.println("\n---------------Menu--------------");
             System.out.println("1. Square Root ");
@@ -44,6 +43,7 @@ public class Calculator {
             System.out.println("3. Natural Log ");
             System.out.println("4. Power ");
             System.out.println("5. Exit");
+            System.out.println("---------------------------------\n");
             System.out.print("Choose an option: ");
 
             int choice;
