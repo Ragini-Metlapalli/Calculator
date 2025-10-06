@@ -34,12 +34,11 @@ public class Calculator {
 
     // CLI Menu
     public void run() {
+        System.out.print("---------------------Calculator-------------------- ");
         Scanner sc = new Scanner(System.in);
-        if (System.console() == null && sc.hasNextLine()) {
-            sc.nextLine();
-        }
+        try { Thread.sleep(500); } catch (InterruptedException ignored) {}
         while (true) {
-            System.out.println("\n--- Calculator ---");
+            System.out.println("\n---------------Menu--------------");
             System.out.println("1. Square Root ");
             System.out.println("2. Factorial ");
             System.out.println("3. Natural Log ");
