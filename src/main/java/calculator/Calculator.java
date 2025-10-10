@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Calculator {
 
-
     // Square root
     public double sqrt(double x) {
         if (x < 0) throw new IllegalArgumentException("Cannot take sqrt of negative number");
@@ -32,7 +31,7 @@ public class Calculator {
         return Math.pow(x, y);
     }
 
-    // CLI Menu
+
     public void run() {
         System.out.print("########################## Calculator ################################ ");
         Scanner sc = new Scanner(System.in);
@@ -97,7 +96,6 @@ public class Calculator {
         }
     }
 
-    // Main
     public static void main(String[] args) {
         Calculator calc = new Calculator();
         calc.run();
