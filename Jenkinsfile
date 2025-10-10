@@ -1,7 +1,9 @@
 
 pipeline {
     agent any
-
+    options {
+        skipDefaultCheckout(true)
+    }
     tools {
         maven 'maven'
         jdk 'jdk21'
