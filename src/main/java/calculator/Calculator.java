@@ -3,6 +3,7 @@ package calculator;
 import java.util.Scanner;
 
 public class Calculator {
+    //adding a comment to trigger
     // Square root
     public double sqrt(double x) {
         if (x < 0) throw new IllegalArgumentException("Cannot take sqrt of negative number");
