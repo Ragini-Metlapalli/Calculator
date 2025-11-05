@@ -3,7 +3,6 @@ package calculator;
 import java.util.Scanner;
 
 public class Calculator {
-    //comment to trigger jenkins pipeline
     // Square root
     public double sqrt(double x) {
         if (x < 0) throw new IllegalArgumentException("Cannot take sqrt of negative number");
